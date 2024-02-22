@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.kat.gestibanque.entities.Actualite;
+import com.kat.gestibanque.entities.Apropos;
 import com.kat.gestibanque.services.ActualiteService;
 
 @RequestMapping("/actualite")
@@ -35,10 +36,16 @@ public class ActualiteController {
 		return actualiteService.saveActualite(actualite);
 	}
 
+<<<<<<< HEAD
 	@PutMapping("/{id}")
 	public Actualite updateActualite(@PathVariable int id,@RequestBody Actualite actualite) {
+=======
+	@PutMapping("/")
+	public Actualite updateActualite(@RequestBody Actualite actualite) {
+>>>>>>> 0b87e05e78d777249a77b3826688b5af8acb7c61
 		return actualiteService.saveActualite(actualite);
 	}
+	
 
 	@DeleteMapping("/{id}")
 	public void deleteActualite(@PathVariable int id) {
