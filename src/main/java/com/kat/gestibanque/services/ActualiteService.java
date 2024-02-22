@@ -2,6 +2,7 @@ package com.kat.gestibanque.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,21 +13,23 @@ import com.kat.gestibanque.repository.ActualiteRepository;
 public class ActualiteService {
 
 	@Autowired
-	ActualiteRepository actualiterepository;
+	ActualiteRepository actualiteRepository;
 
 	public List<Actualite> listActualite() {
-		return (List<Actualite>) actualiterepository.findAll();
+		return (List<Actualite>) actualiteRepository.findAll();
 	}
 	
 	public Actualite saveActualite(Actualite actualite) {  // cette méthode sert aussi bien pour l'ajout ou la modification
-		return actualiterepository.save(actualite);
+		return actualiteRepository.save(actualite);
 	}
 	
 	public void deleteActualite(int id) {
-		actualiterepository.deleteById(id);
+		actualiteRepository.deleteById(id);
 	}
 	
 	public Actualite getActualite(int id) {
-		return actualiterepository.findById(id).get();
+		return actualiteRepository.findById(id).get();
 	}
+	
+	
 }

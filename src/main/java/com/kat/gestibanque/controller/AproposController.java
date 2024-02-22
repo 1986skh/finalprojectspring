@@ -13,42 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.kat.gestibanque.entities.Actualite;
 import com.kat.gestibanque.entities.Apropos;
-import com.kat.gestibanque.services.ActualiteService;
+import com.kat.gestibanque.services.AproposService;
 
-@RequestMapping("/actualite")
+
+
+@RequestMapping("/apropos")
 @RestController
 @CrossOrigin("*")
-public class ActualiteController {
-
+public class AproposController {
 	
-	@Autowired ActualiteService actualiteService;
+	@Autowired AproposService aproposService;
 
 	@GetMapping("/")
-	public List<Actualite> getAllActualite() {
-		return actualiteService.listActualite();
+	public List<Apropos> getAllApropos() {
+		return aproposService.listApropos();
 	}
 
 	@PostMapping("/")
-	public Actualite addActualite(@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
+	public Apropos addApropos(@RequestBody Apropos apropos) {
+		return aproposService.saveApropos(apropos);
 	}
 
 	@PutMapping("/")
-	public Actualite updateActualite(@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
+	public Apropos updateApropos(@RequestBody Apropos apropos) {
+		return aproposService.saveApropos(apropos);
 	}
-	
 
 	@DeleteMapping("/{id}")
-	public void deleteActualite(@PathVariable int id) {
-		actualiteService.deleteActualite(id);
+	public void deleteApropos(@PathVariable int id) {
+		aproposService.deleteApropos(id);
 	}
 	
 	@GetMapping("/{id}")
-	public Actualite getActualite(@PathVariable int id) {
-		return actualiteService.getActualite(id);
+	public Apropos getApropos(@PathVariable int id) {
+		return aproposService.getApropos(id);
 	}
 }
