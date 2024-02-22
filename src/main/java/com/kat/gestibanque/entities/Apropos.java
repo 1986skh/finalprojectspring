@@ -16,20 +16,20 @@ private String description;
 //private byte[] image;
 private String telephone;
 private String adress;
-private String emailContact;
+private String email;
 
 
 public Apropos() {
 
 }
-public Apropos(int id, String description,  String telephone, String adress, String emailContact) {
+public Apropos(int id, String description,  String telephone, String adress, String email) {
 	super();
 	this.id = id;
 	this.description = description;
 	//this.image = image;
 	this.telephone = telephone;
 	this.adress = adress;
-	this.emailContact = emailContact;
+	this.email= email;
 }
 public int getId() {
 	return id;
@@ -62,10 +62,10 @@ public void setAdress(String adress) {
 	this.adress = adress;
 }
 public String getEmailContact() {
-	return emailContact;
+	return email;
 }
-public void setEmailContact(String emailContact) {
-	this.emailContact = emailContact;
+public void setEmailContact(String email) {
+	this.email = email;
 }
 
 
