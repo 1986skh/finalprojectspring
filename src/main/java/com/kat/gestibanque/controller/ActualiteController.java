@@ -35,7 +35,7 @@ public class ActualiteController {
 		return actualiteService.saveActualite(actualite);
 	}
 
-	@PutMapping("/")
+	@PutMapping("/{id}")
 	public Actualite updateActualite(@RequestBody Actualite actualite) {
 		return actualiteService.saveActualite(actualite);
 	}
@@ -47,6 +47,6 @@ public class ActualiteController {
 	
 	@GetMapping("/{id}")
 	public Actualite getActualite(@PathVariable int id) {
-		return actualiteservice.getActualite(id);
+		return actualiteService.getActualite(id);
 	}
 }

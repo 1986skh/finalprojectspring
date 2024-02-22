@@ -18,8 +18,8 @@ public class ActualiteService {
 		return (List<Actualite>) actualiterepository.findAll();
 	}
 	
-	public Actualite saveActualite(Actualite banque) {  // cette méthode sert aussi bien pour l'ajout ou la modification
-		return actualiterepository.save(banque);
+	public Actualite saveActualite(Actualite actualite) {  // cette méthode sert aussi bien pour l'ajout ou la modification
+		return actualiterepository.save(actualite);
 	}
 	
 	public void deleteActualite(int id) {

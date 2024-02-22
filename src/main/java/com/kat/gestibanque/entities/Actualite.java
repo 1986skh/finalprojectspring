@@ -1,24 +1,25 @@
 package com.kat.gestibanque.entities;
 
 import java.time.LocalDate;
-
-import org.springframework.web.bind.annotation.RestController;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Actualite {
+
+@Id @GeneratedValue(strategy = GenerationType.AUTO)
 private int id;
 private String titre;
 private String description;
-private LocalDate date;
-
+private LocalDate date = LocalDate.now();;
 public Actualite() {
 
 }
-public Actualite(int idActualite, String titre, String description, LocalDate date) {
+public Actualite(int id, String titre, String description, LocalDate date) {
 	super();
-	this.id = idActualite;
+	this.id = id;
 	this.titre = titre;
 	this.description = description;
 	this.date = date;
@@ -26,16 +27,16 @@ public Actualite(int idActualite, String titre, String description, LocalDate da
 
 @Override
 public String toString() {
-	return "Actualite [idActualite=" + id + ", titre=" + titre + ", description=" + description + ", date="
+	return "Actualite [id=" + id + ", titre=" + titre + ", description=" + description + ", date="
 			+ date + "]";
 }
 
-public int getIdActualite() {
+public int getId() {
 	return id;
 }
 
-public void setIdActualite(int idActualite) {
-	this.id = idActualite;
+public void setId(int id) {
+	this.id = id;
 }
 
 public String getTitre() {
