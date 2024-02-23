@@ -38,8 +38,14 @@ public class ActualiteController {
 		return actualiteService.saveActualite(actualite);
 	}
 
+	@PutMapping("/{id}")
+	public Actualite updateActualite(@PathVariable int id,@RequestBody Actualite actualite) {
+		return actualiteService.saveActualite(actualite);
+	}
+
 	@PutMapping("/")
 	public Actualite updateActualite(@RequestBody Actualite actualite) {
+
 		return actualiteService.saveActualite(actualite);
 	}
 	

@@ -22,6 +22,7 @@ public class ActualiteService {
 	
 	public Actualite saveActualite(Actualite actualite) {  // cette méthode sert aussi bien pour l'ajout ou la modification
 		return actualiteRepository.save(actualite);
+
 	}
 	
 	public void deleteActualite(int id) {
