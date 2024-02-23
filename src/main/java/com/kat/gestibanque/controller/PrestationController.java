@@ -13,39 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kat.gestibanque.entities.Services;
-import com.kat.gestibanque.services.ServService;
+import com.kat.gestibanque.entities.Prestation;
+import com.kat.gestibanque.services.PrestationService;
 
-@RequestMapping("/services")
+
+@RequestMapping("/prestations")
 @RestController
 @CrossOrigin("*")
-public class ServController {
-
-	
-	@Autowired ServService servService;
+public class PrestationController {
+@Autowired PrestationService prestationService;
 
 	@GetMapping("/")
-	public List<Services> getAllServices() {
-		return servService.listService();
+	public List<Prestation> getAllPrestation() {
+		return prestationService.listPrestation();
 	}
 
 	@PostMapping("/")
-	public Services addServices(@RequestBody Services services) {
-		return servService.saveService(services);
+	public Prestation addPrestations(@RequestBody Prestation prestations) {
+		return prestationService.savePrestation(prestations);
 	}
 
 	@PutMapping("/")
-	public Services updateServices(@RequestBody Services services) {
-		return servService.saveService(services);
+	public Prestation updatePrestations(@RequestBody Prestation prestations) {
+		return prestationService.savePrestation(prestations);
 	}
 
 	@DeleteMapping("/{id}")
 	public void deleteContact(@PathVariable int id) {
-		servService.deleteService(id);
+		prestationService.deletePrestation(id);
 	}
 	
 	@GetMapping("/{id}")
-	public Services getService(@PathVariable int id) {
-		return servService.getService(id);
+	public Prestation getService(@PathVariable int id) {
+		return prestationService.getPrestation(id);
 	}
 }

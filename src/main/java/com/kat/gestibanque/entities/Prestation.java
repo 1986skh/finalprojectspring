@@ -8,17 +8,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Services {
+public class Prestation {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String libelle;
 	private String description;
 	
-	public Services(){
+	public Prestation(){
 	
 	}
 	
-	public Services(int idService, String libelle, String description) {
+	public Prestation(int idService, String libelle, String description) {
 		super();
 		this.id = idService;
 		this.libelle = libelle;
