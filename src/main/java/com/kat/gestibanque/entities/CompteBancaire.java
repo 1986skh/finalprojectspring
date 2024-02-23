@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class CompteBancaire {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private int numeroCompte;
+	private String numeroCompte;
 	private LocalDate dateCreation=LocalDate.now();
 	private Double montant;
 	private String etatCompte;
@@ -17,7 +17,7 @@ public class CompteBancaire {
 	public CompteBancaire() {
 		super();
 	}
-	public CompteBancaire(int id, int numeroCompte, LocalDate dateCreation, Double montant, String etatCompte,
+	public CompteBancaire(int id, String numeroCompte, LocalDate dateCreation, Double montant, String etatCompte,
 			TypeCompte typeCompte) {
 		super();
 		this.id = id;
@@ -38,10 +38,10 @@ public class CompteBancaire {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getNumeroCompte() {
+	public String getNumeroCompte() {
 		return numeroCompte;
 	}
-	public void setNumeroCompte(int numeroCompte) {
+	public void setNumeroCompte(String numeroCompte) {
 		this.numeroCompte = numeroCompte;
 	}
 	public LocalDate getDateCreation() {

@@ -48,7 +48,7 @@ public class CompteBancaireController {
 		return compteBancaireService.getCompteBancaire(id);
 	}
 	   @GetMapping("/{numero}")
-	    public CompteBancaire getCompteByNumero(@PathVariable Double numeroCompte) {
-	        return compteBancaireService.findCompteByNumero(numeroCompte);
+	    public CompteBancaire getCompteByNumero(@PathVariable String numeroCompte) {
+	        return compteBancaireService.chercher(numeroCompte);
 	    }
 }

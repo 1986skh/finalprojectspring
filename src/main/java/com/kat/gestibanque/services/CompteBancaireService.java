@@ -27,7 +27,7 @@ public void deleteCompteBancaire(int id) {
 public CompteBancaire getCompteBancaire(int id) {
 	return compteBancaireRepository.findById(id).get();
 }
-public CompteBancaire findCompteByNumero(Double numeroCompte) {
-    return compteBancaireRepository.findByNumero(numeroCompte);
+public CompteBancaire chercher(String numeroCompte) {
+    return compteBancaireRepository.findByNumeroCompte(numeroCompte);
 }
 }

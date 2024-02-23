@@ -8,5 +8,5 @@ import com.kat.gestibanque.entities.CompteBancaire;
 
 @Repository
 public interface CompteBancaireRepository extends CrudRepository<CompteBancaire,Integer>{
-	 CompteBancaire findByNumero(Double numeroCompte);
+	 CompteBancaire findByNumeroCompte(String numeroCompte);
 }
