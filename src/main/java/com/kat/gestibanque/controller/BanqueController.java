@@ -14,50 +14,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import com.kat.gestibanque.entities.Actualite;
-import com.kat.gestibanque.entities.Apropos;
 import com.kat.gestibanque.entities.Banque;
-import com.kat.gestibanque.services.ActualiteService;
+import com.kat.gestibanque.entities.Contact;
+import com.kat.gestibanque.services.BanqueService;
+import com.kat.gestibanque.services.ContactService;
 
-@RequestMapping("/actualite")
+@RequestMapping("/banques")
 @RestController
 @CrossOrigin("*")
-public class ActualiteController {
+public class BanqueController {
 
 	
-	@Autowired ActualiteService actualiteService;
+	@Autowired BanqueService banqueService;
 
 	@GetMapping("/")
-	public List<Actualite> getAllActualite() {
-		return actualiteService.listActualite();
+	public List<Banque> getAllBanque() {
+		return banqueService.listBanque();
 	}
 
 	@PostMapping("/")
-	public Actualite addActualite(@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
+	public Banque addBanque(@RequestBody Banque banque) {
+		return banqueService.saveBanque(banque);
 	}
 
 	@PutMapping("/")
-	public Actualite updateActualite(@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
+	public Banque updatBanque(@RequestBody Banque banque) {
+		return banqueService.saveBanque(banque);
 	}
-	
 
 	@DeleteMapping("/{id}")
-	public void deleteActualite(@PathVariable int id) {
-		actualiteService.deleteActualite(id);
+	public void deleteBanque(@PathVariable int id) {
+		banqueService.deleteBanque(id);
 	}
 	
 	@GetMapping("/{id}")
-	public Actualite getActualite(@PathVariable int id) {
-		return actualiteService.getActualite(id);
+	public Banque getBanque(@PathVariable int id) {
+		return banqueService.getBanque(id);
 	}
 	
 	 @GetMapping("/search")
-	    public List<Actualite>searchActualite(@RequestParam String titre) {
-	        return actualiteService.searchActualite(titre);
+	    public List<Banque> searchBanques(@RequestParam String nom) {
+	        return banqueService.searchByNom(nom);
 	    }
-
-	
 }

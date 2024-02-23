@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kat.gestibanque.entities.Actualite;
+import com.kat.gestibanque.entities.Banque;
 import com.kat.gestibanque.repository.ActualiteRepository;
 
 @Service
@@ -30,6 +31,9 @@ public class ActualiteService {
 	public Actualite getActualite(int id) {
 		return actualiteRepository.findById(id).get();
 	}
-	
+	public List<Actualite>searchActualite(String titre) {
+        return actualiteRepository.findByTitre(titre);
+    }
+
 	
 }

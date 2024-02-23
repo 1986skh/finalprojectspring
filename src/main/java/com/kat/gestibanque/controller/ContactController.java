@@ -27,7 +27,7 @@ public class ContactController {
 	@Autowired ContactService contactService;
 
 	@GetMapping("/")
-	public List<Contact> getAllContactService() {
+	public List<Contact> getAllContact() {
 		return contactService.listContact();
 	}
 
