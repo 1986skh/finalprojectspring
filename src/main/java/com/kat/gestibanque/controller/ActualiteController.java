@@ -36,13 +36,14 @@ public class ActualiteController {
 		return actualiteService.saveActualite(actualite);
 	}
 
-<<<<<<< HEAD
 	@PutMapping("/{id}")
 	public Actualite updateActualite(@PathVariable int id,@RequestBody Actualite actualite) {
-=======
+		return actualiteService.saveActualite(actualite);
+	}
+
 	@PutMapping("/")
 	public Actualite updateActualite(@RequestBody Actualite actualite) {
->>>>>>> 0b87e05e78d777249a77b3826688b5af8acb7c61
+
 		return actualiteService.saveActualite(actualite);
 	}
 	
