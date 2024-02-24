@@ -1,0 +1,48 @@
+version: '3.3'
+services:
+    spring: 
+       image: gestibanqueimage 
+       ports:
+         - "8081:8080"
+       depends_on:
+         - database 
+       restart: always
+       environment:
+         SPRING_DATASOURCE_URL: jdbc:mysql://database:3307/gestibanquefinal2024rest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+         SPRING_DATASOURCE_USERNAME: kat
+         SPRING_DATASOURCE_PASSWORD: kat2024
+       networks: 
+         - kat_net 
+       
+    database:
+       image: mysql:latest
+       container_name: mysql_cont
+       volumes:
+       - gestibanquefinalvolume:/var/lib/mysql
+       restart: always
+       environment:
+         MYSQL_DATABASE: gestibanquefinal2024rest
+         MYSQL_USER: kat
+         MYSQL_PASSWORD: kat2024
+         MYSQL_ROOT_PASSWORD: 
+       networks:
+        - kat_net 
+      
+    phpmyadmin:
+       image: phpmyadmin
+       container_name: pmadmin_cont
+       depends_on:
+        - database
+       restart: always
+       ports:
+       - 8095:80
+       environment:
+       - PMA_ARBITRARY=1
+       networks:
+       - kat_net
+
+volumes:
+  gestibanquefinalvolume:
+
+networks:
+  kat_net:

@@ -13,41 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kat.gestibanque.entities.Apropos;
-import com.kat.gestibanque.entities.Contact;
-import com.kat.gestibanque.services.AproposService;
-import com.kat.gestibanque.services.ContactService;
+import com.kat.gestibanque.entities.Prestation;
+import com.kat.gestibanque.services.PrestationService;
 
-@RequestMapping("/contact")
+
+@RequestMapping("/prestations")
 @RestController
 @CrossOrigin("*")
-public class ContactController {
-
-	
-	@Autowired ContactService contactService;
+public class PrestationController {
+@Autowired PrestationService prestationService;
 
 	@GetMapping("/")
-	public List<Contact> getAllContact() {
-		return contactService.listContact();
+	public List<Prestation> getAllPrestation() {
+		return prestationService.listPrestation();
 	}
 
 	@PostMapping("/")
-	public Contact addContact(@RequestBody Contact contact) {
-		return contactService.saveContact(contact);
+	public Prestation addPrestations(@RequestBody Prestation prestations) {
+		return prestationService.savePrestation(prestations);
 	}
 
 	@PutMapping("/")
-	public Contact updateContact(@RequestBody Contact contact) {
-		return contactService.saveContact(contact);
+	public Prestation updatePrestations(@RequestBody Prestation prestations) {
+		return prestationService.savePrestation(prestations);
 	}
 
 	@DeleteMapping("/{id}")
 	public void deleteContact(@PathVariable int id) {
-		contactService.deleteContact(id);
+		prestationService.deletePrestation(id);
 	}
 	
 	@GetMapping("/{id}")
-	public Contact getContact(@PathVariable int id) {
-		return contactService.getContact(id);
+	public Prestation getService(@PathVariable int id) {
+		return prestationService.getPrestation(id);
 	}
 }

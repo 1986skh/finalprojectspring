@@ -13,7 +13,8 @@ public class Actualite {
 private int id;
 private String titre;
 private String description;
-private LocalDate date = LocalDate.now();;
+private LocalDate date = LocalDate.now();
+
 public Actualite() {
 
 }
