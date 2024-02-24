@@ -14,6 +14,7 @@ public class CompteBancaire {
 	private Double montant;
 	private String etatCompte;
 	private TypeCompte typeCompte;
+	
 	public CompteBancaire() {
 		super();
 	}

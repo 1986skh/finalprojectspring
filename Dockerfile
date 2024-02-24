@@ -21,12 +21,13 @@ WORKDIR /app
 
 # Copier le fichier JAR exécutable de l'étape de construction à l'étape d'exécution
 # '/app/target/ams_data-0.0.1-SNAPSHOT.jar' est le fichier JAR généré par Maven
-COPY --from=build /app/target/FinalProjectGestiBanque.jar .
+COPY --from=build /app/target/FinalProjectGestiBanque-0.0.1-SNAPSHOT.jar .
 
 # Exposer le port sur lequel l'application sera à l'écoute
 # '8080' est le port typique pour les applications web
-EXPOSE 8094
+EXPOSE 8080
 
 # Définir la commande pour exécuter l'application
 # 'java -jar' est utilisé pour lancer l'application JAR
-CMD ["java", "-jar", "FinalProjectGestiBanque.jar"]
+CMD ["java", "-jar", "FinalProjectGestiBanque-0.0.1-SNAPSHOT.jar"]
+
