@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kat.gestibanque.entities.CompteBancaire;
 import com.kat.gestibanque.services.CompteBancaireService;
 
-
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/comptes")
+@RequestMapping("/comptebancaire")
 public class CompteBancaireController {
-	@Autowired CompteBancaireService compteBancaireService;
+	@Autowired
+	CompteBancaireService compteBancaireService;
 
 	@GetMapping("/")
 	public List<CompteBancaire> getAllCompteBancaireService() {
@@ -42,13 +42,14 @@ public class CompteBancaireController {
 	public void deleteCompte(@PathVariable int id) {
 		compteBancaireService.deleteCompteBancaire(id);
 	}
-	
+
 	@GetMapping("/{id}")
 	public CompteBancaire getCompte(@PathVariable int id) {
 		return compteBancaireService.getCompteBancaire(id);
 	}
-	   @GetMapping("/{numero}")
-	    public CompteBancaire getCompteByNumero(@PathVariable String numeroCompte) {
-	        return compteBancaireService.chercher(numeroCompte);
-	    }
+
+	@GetMapping("/{numero}")
+	public CompteBancaire getCompteByNumero(@PathVariable String numeroCompte) {
+		return compteBancaireService.chercher(numeroCompte);
+	}
 }
