@@ -1,0 +1,72 @@
+package com.kat.gestibanque.entities;
+
+import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Actualite {
+
+@Id @GeneratedValue(strategy = GenerationType.AUTO)
+private int id;
+private String titre;
+private String description;
+private LocalDate date = LocalDate.now();
+
+public Actualite() {
+
+}
+public Actualite(int id, String titre, String description, LocalDate date) {
+	super();
+	this.id = id;
+	this.titre = titre;
+	this.description = description;
+	this.date = date;
+}
+
+@Override
+public String toString() {
+	return "Actualite [id=" + id + ", titre=" + titre + ", description=" + description + ", date="
+			+ date + "]";
+}
+
+public int getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
+}
+
+public String getTitre() {
+	return titre;
+}
+
+public void setTitre(String titre) {
+	this.titre = titre;
+}
+
+public String getDescription() {
+	return description;
+}
+
+public void setDescription(String description) {
+	this.description = description;
+}
+
+public LocalDate getDate() {
+	return date;
+}
+
+public void setDate(LocalDate date) {
+	this.date = date;
+}
+
+
+
+
+
+
+}
