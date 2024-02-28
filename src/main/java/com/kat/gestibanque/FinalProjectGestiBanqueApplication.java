@@ -16,17 +16,17 @@ import com.kat.gestibanque.entities.*;
 @SpringBootApplication
 public class FinalProjectGestiBanqueApplication{
 	
-	/*@Autowired
+	@Autowired
 	  RoleRepository roleRepository;
 	
-	@PostConstruct
+	/*@PostConstruct
 	private void initRole()  {
 		roleRepository.save(new Role(ERole.USER));
 		roleRepository.save(new Role(ERole.ADMIN));
 		roleRepository.save(new Role(ERole.AGENT));
 		roleRepository.save(new Role(ERole.CLIENT));
-	}
-*/
+	}*/
+
 	public static void main(String[] args) {
 		SpringApplication.run(FinalProjectGestiBanqueApplication.class, args);
 	}
