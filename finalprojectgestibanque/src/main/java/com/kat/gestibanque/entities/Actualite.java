@@ -14,22 +14,24 @@ private int id;
 private String titre;
 private String description;
 private LocalDate date = LocalDate.now();
+private String image;
 
 public Actualite() {
 
 }
-public Actualite(int id, String titre, String description, LocalDate date) {
+public Actualite(int id, String titre, String description, LocalDate date,String image) {
 	super();
 	this.id = id;
 	this.titre = titre;
 	this.description = description;
 	this.date = date;
+	this.image=image;
 }
 
 @Override
 public String toString() {
 	return "Actualite [id=" + id + ", titre=" + titre + ", description=" + description + ", date="
-			+ date + "]";
+			+ date +",image="+ image + "]";
 }
 
 public int getId() {
@@ -64,6 +66,13 @@ public void setDate(LocalDate date) {
 	this.date = date;
 }
 
+public String getImage() {
+	return image;
+}
+
+public void setImage(String image) {
+	this.image = image;
+}
 
 
 
