@@ -20,7 +20,10 @@ import com.kat.gestibanque.entities.Apropos;
 import com.kat.gestibanque.entities.Banque;
 import com.kat.gestibanque.services.ActualiteService;
 
-@RequestMapping("/actualite")
+
+@RequestMapping("/actualites")
+
+
 @RestController
 @CrossOrigin("*")
 public class ActualiteController {
