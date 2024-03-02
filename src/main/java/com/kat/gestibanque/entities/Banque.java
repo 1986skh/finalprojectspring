@@ -12,27 +12,29 @@ public class Banque {
 	private int id;
 	private String nom;
 	private String adresse;
+	private String logo;
 	private double capital;
-	private String telephone;
+	
+	
 	
 	public Banque() {
-	
+		super();
 	}
 	
-	public Banque(int id, String nom, String adresse, double capital, String telephone) {
-		super();
-		this.id = id;
+	public Banque( String nom, String adresse, String logo, double capital) {
+	
 		this.nom = nom;
 		this.adresse = adresse;
+		this.logo = logo;
 		this.capital = capital;
-		this.telephone = telephone;
+		
 	}
 	
-	
+
+
 	@Override
 	public String toString() {
-		return "Banque [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", capital=" + capital + ", telephone="
-				+ telephone + "]";
+		return "Banque [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ",logo=" + logo + ", capital=" + capital + "]";
 	}
 	
 	
@@ -60,11 +62,11 @@ public class Banque {
 	public void setCapital(double capital) {
 		this.capital = capital;
 	}
-	public String getTelephone() {
-		return telephone;
+	public String getLogo() {
+		return logo;
 	}
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
+	public void setLogo(String logo) {
+		this.logo = logo;
 	}
 	
 	

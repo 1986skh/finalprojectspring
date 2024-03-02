@@ -19,7 +19,7 @@ private String image;
 public Actualite() {
 
 }
-public Actualite(int id, String titre, String description, LocalDate date,String image) {
+public Actualite(String image,String titre, String description, LocalDate date) {
 	super();
 	this.id = id;
 	this.titre = titre;

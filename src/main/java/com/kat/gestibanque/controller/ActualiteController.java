@@ -1,5 +1,7 @@
 package com.kat.gestibanque.controller;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kat.gestibanque.entities.Actualite;
 import com.kat.gestibanque.entities.Apropos;
@@ -37,22 +39,24 @@ public class ActualiteController {
 	}
 
 	@PostMapping("/")
-	public Actualite addActualite(@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
+//	public Actualite addActualite(@RequestBody Actualite actualite) {
+//		return actualiteService.saveActualite(actualite);}
+	public Actualite create(@RequestParam("imageFile") MultipartFile imageFile,
+			@RequestParam("titre") String titre,
+			@RequestParam("description") String description, 
+			@RequestParam("date") LocalDate date
+			//@RequestParam("imageName") String imageName
+			) throws IOException, Throwable
+	{
+		
+		//System.out.println("Hello");
+		return actualiteService.create(imageFile,titre,description,date);
 	}
 
 	@PutMapping("/{id}")
-	public Actualite updateActualite(@PathVariable int id,@RequestBody Actualite actualite) {
-		return actualiteService.saveActualite(actualite);
-	}
-
-	@PutMapping("/")
 	public Actualite updateActualite(@RequestBody Actualite actualite) {
-
-		return actualiteService.saveActualite(actualite);
+	    return actualiteService.updateActualite(actualite);
 	}
-	
-
 	@DeleteMapping("/{id}")
 	public void deleteActualite(@PathVariable int id) {
 		actualiteService.deleteActualite(id);

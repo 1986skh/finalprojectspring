@@ -9,8 +9,6 @@ import com.kat.gestibanque.entities.Banque;
 
 public interface BanqueRepository extends CrudRepository<Banque,Integer> {
 
-	
-
 	List<Banque> findByNomContaining(String nom);
 	
 }
