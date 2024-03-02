@@ -26,8 +26,7 @@ public class UserController {
 		return (List<User>) userService.getAllUsers();
 	}
 	
-	@RequestMapping({ "/agents" })
-	@GetMapping
+	@GetMapping({ "/agents" })
 	public List<User> findAllAgents() {
 		return (List<User>) userService.getAllAgents();
 	}
